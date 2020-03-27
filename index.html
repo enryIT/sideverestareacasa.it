@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Coronavirus | si deve restare a casa oggi?</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Enrico Caruso">
+    <meta name="description" content="Entra e scopri se oggi devi rimanere a casa nella tua città a causa del COVID-19 chiamato volgarmente Coronavirus">
+    <meta property="og:title" content="Coronavirus | Si deve restare a casa oggi?">
+    <meta property="og:description" content="Entra e scopri se oggi devi rimanere a casa nella tua città a causa del COVID-19 chiamato volgarmente Coronavirus">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sideverestareacasa.it">
+    <meta property="og:site_name" content="Coronavirus | Si deve restare a casa oggi?">
+    <meta property="og:image" content="https://www.sideverestareacasa.it/si.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Coronavirus | Si deve restare a casa oggi?">
+    <meta name="twitter:description" content="Entra e scopri se oggi devi rimanere a casa nella tua città a causa del COVID-19 chiamato volgarmente Coronavirus">
+    <meta name="twitter:image" content="https://www.sideverestareacasa.it/si.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <div class="content">
+        <h1 id="response">Si</h1>
+    </div>
+    <div class="content2">
+        <button id="button"></button>
+    </div>
+    <div class="footer">
+        <a href="mailto:info@sideverestareacasa.it" target="_blank">info@sideverestareacasa.it</a>
+        &nbsp;
+        <a href="https://www.iubenda.com/privacy-policy/62777947" class="iubenda-white iubenda-embed" title="Privacy Policy" target="_blank">Privacy Policy</a>
+        &nbsp;
+        <a href="https://www.facebook.com/sharer.php?u=https://www.sideverestareacasa.it&t=Coronavirus %7C si deve restare a casa oggi?" target="_blank">Facebook</a>
+        &nbsp;
+        <a href="https://twitter.com/intent/tweet?url=https://www.sideverestareacasa.it&text=Coronavirus %7C si deve restare a casa oggi?&hashtags=iorestoacasa,sideverestareacasa,coronavirus,covid19" target="_blank">Twitter</a>
+
+    </div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72297804-8"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-72297804-8');
+</script>
+<script>
+function hex_is_light(color) {
+    const hex = color.replace('#', '');
+    const c_r = parseInt(hex.substr(0, 2), 16);
+    const c_g = parseInt(hex.substr(2, 2), 16);
+    const c_b = parseInt(hex.substr(4, 2), 16);
+    const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+    return brightness > 150;
+}
+function generateRandomColor() {
+    let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+    if (hex_is_light(randomColor)) {
+        generateRandomColor();
+    }
+    return randomColor;
+}
+document.body.style.background = generateRandomColor();
+    let button = document.getElementById('button');
+    let values = [
+        'Anche se devo andare a mangiare da mammà?',
+        'Anche se non ho più voglia di stare a casa?',
+        'Anche se devo andare a trovare un amico?',
+        'Anche se devo farmi tagliare i capelli da mio zio?',
+        'Anche se devo andare dalla mia dolce metà?',
+        'Anche se devo andare a fare un giro in paese?',
+        'Anche se mi invento che è per lavoro?',
+        'Anche se devo andare nella macelleria del paese accanto?',
+        'Anche se devo comprare un tappeto nuovo?',
+        'Anche se devo andare al compleanno di mio nipote?',
+        'Anche se devo fare un trasloco?',
+        'Anche se devo andare a fare jogging?',
+        'Anche se mi porto dietro il cane come alibi?',
+        'Anche se devo passare al cimitero?',
+        'Anche se dico che mi è scappato il cane?',
+        'Anche se mi annoio?',
+        'Anche se devo andare a comprare le sigarette?',
+        'Anche se sono in casa con i mei genitori e ho 30 anni?',
+        'Anche se ho visto la Madonna fuori dalla finestra?',
+        'Anche se fuori si sta meglio?',
+        'Anche se fuori è più caldo?',
+    ];
+    button.innerHTML = values[Math.floor(Math.random() * values.length)];
+    document.getElementById('button').addEventListener('click', function () {
+        let choices = values.filter(function (value) {
+            return value !== button.innerHTML;
+        });
+        let res = document.getElementById('response');
+        let con = document.getElementsByClassName('content')[0];
+        res.innerHTML = '...';
+        if (Math.random() > 0.88) {
+            res.style = 'font-size: 3rem;';
+            con.style = 'padding: 9.04rem 0;';
+            let delay = Math.random() * 1000;
+            setTimeout(function () {
+                res.innerHTML = 'Forse!';
+            }, delay);
+            setTimeout(function () {
+                res.innerHTML = 'Ah...';
+            }, delay + 600);
+            setTimeout(function () {
+                res.innerHTML = 'Aspetta';
+            }, delay + 1800);
+            setTimeout(function () {
+                res.innerHTML = 'Fammi pensare...';
+            }, delay + 2800);
+            setTimeout(function () {
+                res.style = 'font-size: 10rem;';
+                con.style = 'padding: 5rem 0;';
+                res.innerHTML = 'Si';
+                button.innerHTML = choices[Math.floor(Math.random() * choices.length)];
+                document.body.style.background = generateRandomColor();
+            }, delay + 3600);
+        } else setTimeout(function () {
+            res.innerHTML = 'Si';            
+            button.innerHTML = choices[Math.floor(Math.random() * choices.length)];
+            document.body.style.background = generateRandomColor();
+        }, (Math.random() * 1000) + 500);
+     });
+</script>
+</body>
+</html>

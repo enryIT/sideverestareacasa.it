@@ -95,7 +95,7 @@
         const c_b = parseInt(hex.substr(4, 2), 16);
         const brightness = Math.sqrt((Math.pow(c_r, 2) * .299) + (Math.pow(c_g, 2) * .587) + (Math.pow(c_b, 2) * .114));
         //const brightness = ((c_r * 2126) + (c_g * 7152) + (c_b * 722)) / 10000;
-        console.log(brightness);
+        //console.log(brightness);
         if (brightness>128 && brightness<220) { return true; } else { return false; }
     }
     function generateRandomColor() {
@@ -129,6 +129,11 @@
             'Anche se ho visto la Madonna fuori dalla finestra?',
             'Anche se fuori si sta meglio?',
             'Anche se fuori è più caldo?',
+            'Anche se sei per seo fa trentaseo?',
+            'Anche se vorrei tanto uno spritz?',
+            'Anche se ho già finito tutte le serie su Netflix?',
+            'Anche se ho già finito tutte le serie su Disney+?',
+            'Anche se voglio fare quello che mi pare?',
         ];
         button.innerHTML = values[Math.floor(Math.random() * values.length)];
         document.getElementById('button').addEventListener('click', function () {
@@ -139,7 +144,6 @@
             res.removeAttribute('style');
             res.innerHTML = '...';
             if (Math.random() > 0.88) {
-                //res.style = 'font-size: 3.5rem;';
                 let delay = Math.random() * 1000;
                 setTimeout(function () {
                     res.innerHTML = 'Forse!';
@@ -154,9 +158,6 @@
                     res.innerHTML = 'Uhm...';
                 }, delay + 2800);
                 setTimeout(function () {
-                    //var mq = window.matchMedia( "(max-width: 992px)" );
-                    //if (mq.matches) { res.style = 'font-size: 6rem;'; }
-                    //else { res.style = 'font-size: 10rem;'; }
                     res.innerHTML = 'Si';
                     button.innerHTML = choices[Math.floor(Math.random() * choices.length)];
                     document.body.style.background = generateRandomColor();

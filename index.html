@@ -168,12 +168,12 @@
                 }, delay + 2800);
                 setTimeout(function () {
                     res.innerHTML = 'Si';
-                    button.innerHTML = shuffleArray(values)[Math.floor(Math.random() * values.length)]
+                    button.innerHTML = shuffleArray(choices)[Math.floor(Math.random() * choices.length)]
                     document.body.style.background = generateRandomColor();
                 }, delay + 3200);
             } else setTimeout(function () {
                 res.innerHTML = 'Si';            
-                button.innerHTML = shuffleArray(values)[Math.floor(Math.random() * values.length)]
+                button.innerHTML = shuffleArray(choices)[Math.floor(Math.random() * choices.length)]
                 document.body.style.background = generateRandomColor();
             }, (Math.random() * 1000) + 400);
         });

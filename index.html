@@ -96,7 +96,7 @@
         const brightness = Math.sqrt((Math.pow(c_r, 2) * .299) + (Math.pow(c_g, 2) * .587) + (Math.pow(c_b, 2) * .114));
         //const brightness = ((c_r * 2126) + (c_g * 7152) + (c_b * 722)) / 10000;
         //console.log(brightness);
-        if (brightness>128 && brightness<220) { return true; } else { return false; }
+        if (brightness>128 && brightness<240) { return true; } else { return false; }
     }
     function generateRandomColor() {
         let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
@@ -104,6 +104,15 @@
             generateRandomColor();
         }
         return randomColor;
+    }
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * i);
+                const temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        return array;
     }
     document.body.style.background = generateRandomColor();
         let button = document.getElementById('button');
@@ -135,7 +144,7 @@
             'Anche se ho già finito tutte le serie su Disney+?',
             'Anche se voglio fare quello che mi pare?',
         ];
-        button.innerHTML = values[Math.floor(Math.random() * values.length)];
+        button.innerHTML = shuffleArray(values)[Math.floor(Math.random() * values.length)]
         document.getElementById('button').addEventListener('click', function () {
             let choices = values.filter(function (value) {
                 return value !== button.innerHTML;
@@ -159,12 +168,12 @@
                 }, delay + 2800);
                 setTimeout(function () {
                     res.innerHTML = 'Si';
-                    button.innerHTML = choices[Math.floor(Math.random() * choices.length)];
+                    button.innerHTML = shuffleArray(values)[Math.floor(Math.random() * values.length)]
                     document.body.style.background = generateRandomColor();
                 }, delay + 3200);
             } else setTimeout(function () {
                 res.innerHTML = 'Si';            
-                button.innerHTML = choices[Math.floor(Math.random() * choices.length)];
+                button.innerHTML = shuffleArray(values)[Math.floor(Math.random() * values.length)]
                 document.body.style.background = generateRandomColor();
             }, (Math.random() * 1000) + 400);
         });
